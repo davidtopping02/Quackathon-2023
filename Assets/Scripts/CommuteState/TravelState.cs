@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CommuteState : BaseState
+public class TravelState: BaseState
 {
-    public CommuteState() : base()
+    public TravelState() : base()
     {
-        Debug.Log("In CommuteState");
+        Debug.Log("In TravelState");
     }
 
 
@@ -15,7 +15,7 @@ public class CommuteState : BaseState
 
     public override void OnEnter()
     {
-        SceneManager.LoadScene("Map");
+        SceneManager.LoadScene("work");
 
     }
 

@@ -39,7 +39,8 @@ public class GameController : MonoBehaviour
         changeState.AddListener(HandeStateChange);
         // initialises the current state to the home state on start-up
         currentState = new HomeState();
-        currentState.OnEnter();
+       
+        //currentState.OnEnter();
     }
 
     private void HandeStateChange(State stateChange)
