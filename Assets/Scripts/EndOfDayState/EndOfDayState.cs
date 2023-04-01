@@ -10,7 +10,7 @@ public class EndOfDayState : BaseState
     }
 
 
-    void start()
+    void Start()
     {
     }
 
@@ -25,7 +25,7 @@ public class EndOfDayState : BaseState
     IEnumerator changeScene()
     {
         // Code to execute after 2 seconds
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
         State homeState = new HomeState();
         GameController.Instance.changeState.Invoke(homeState);
     }
