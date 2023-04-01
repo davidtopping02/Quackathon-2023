@@ -27,11 +27,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Furniture_props_tiles_showcase_Demo.unity
     guid: 94d12274ef041584bbff4862edb6296d
   - enabled: 1
-    path: Assets/Scenes/gym.unity
-    guid: fe873a974ce7dfa40aee10cdf05bbd9a
-  - enabled: 1
     path: Assets/Scenes/HomeScene.unity
     guid: 6737aa4e67753084193f879cae005f05
+  - enabled: 1
+    path: Assets/Scenes/gym.unity
+    guid: fe873a974ce7dfa40aee10cdf05bbd9a
   - enabled: 1
     path: Assets/Scenes/IntroScreen.unity
     guid: 6093bf7c80446114d827597a27b919ea
