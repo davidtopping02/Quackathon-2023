@@ -59,7 +59,9 @@ public class MinigameController : MonoBehaviour
         summaryScreen.SetActive(true);
         moneySummary.text = score.ToString();
 
-        GameController.Instance.player.GetComponent<PlayerStats>().updateMoney(score);
+        PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseMoney, 300);
+        GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
+
 
     }
 
