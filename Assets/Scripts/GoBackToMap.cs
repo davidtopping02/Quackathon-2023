@@ -7,6 +7,6 @@ public class GoBackToMap : MonoBehaviour
     public void BackToMap()
     {
         //State travelState = new com();
-       // GameController.Instance.changeState.Invoke(travelState);
+        //  GameController.Instance.changeState.Invoke(travelState);
     }
 }
