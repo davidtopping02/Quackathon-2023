@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
         }
         currentState = new HomeState();
        
-        //currentState.OnEnter();
+        currentState.OnEnter();
     }
 
     private void HandeStateChange(State stateChange)
