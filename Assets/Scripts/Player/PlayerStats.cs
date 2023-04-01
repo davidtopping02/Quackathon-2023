@@ -66,34 +66,13 @@ public class PlayerStats : MonoBehaviour
                 HasCar = arg0.Truth;
                 break;
         }
-    }
-
-    public void updateMoney(int diff)
-    {
-        this.Money += diff;
-        redrawUI();
-    }
-
-    public void updateFood(int diff)
-    {
-        this.Food += diff;
-        redrawUI();
-    }
-
-    public void updateStrength(int diff)
-    {
-        this.Strength += diff;
-        redrawUI();
-    }
-
-    public void updateSocial(int diff)
-    {
-        this.Social += diff;
+        Debug.Log("called");
         redrawUI();
     }
 
     public void redrawUI()
     {
+        Debug.Log("called"); 
         updateUI.Invoke(Money, Food, Strength, Social);
     }
 }
