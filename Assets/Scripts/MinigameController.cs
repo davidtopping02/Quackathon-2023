@@ -20,7 +20,6 @@ public class MinigameController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("fired");
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
@@ -45,7 +44,7 @@ public class MinigameController : MonoBehaviour
 
     private IEnumerator spawnBug()
     {
-        for (int i = 0; i < 200; i++)
+        for (int i = 0; i < 500; i++)
         {
             yield return new WaitForSeconds(0.3f);
             Vector3 randomPos = new Vector3(Random.Range(-10, 10), Random.Range(-6, 6), 1);
@@ -59,10 +58,9 @@ public class MinigameController : MonoBehaviour
     {
         summaryScreen.SetActive(true);
         moneySummary.text = score.ToString();
-        
+
+        GameController.Instance.player.GetComponent<PlayerStats>().updateMoney(score);
+
     }
-
-   
-
 
 }
