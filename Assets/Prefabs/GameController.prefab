@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8964978241148245217, guid: f4b1c2f37305ae14bb3f62f2a1bd97d5, type: 3}
   isDebug: 1
+  timeInDay: {fileID: 5777153024385362488, guid: f006bc411f13d9549b6d25a4a138b46a, type: 3}
   changeState:
     m_PersistentCalls:
       m_Calls: []
