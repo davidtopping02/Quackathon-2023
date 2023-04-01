@@ -5,11 +5,13 @@ public class TimeManger : MonoBehaviour
 {
     public TextMeshProUGUI m_TextMeshPro;
     [SerializeField]
-    public uint m_UpHours = 6;
+    public uint m_UpHours = 9;
     float timeLeft;
 
+    bool hasEnded = false;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         timeLeft = m_UpHours;
     }
@@ -17,10 +19,17 @@ public class TimeManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeLeft -= Time.deltaTime / 1.0f; // Subtract one minute in real time
+        timeLeft -= Time.deltaTime / 60.0f; // Subtract one minute in real time
 
-        if (timeLeft <= (0.1 * m_UpHours))
+        if (timeLeft <= 0)
         {
+
+            if(hasEnded)
+            {
+                return; 
+            }
+
+            hasEnded = true;
             // penalise the player
             PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseStreangth, 5);
             GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);

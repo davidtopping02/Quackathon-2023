@@ -5,44 +5,36 @@ EditorUserSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 4
   m_ConfigSettings:
-    RecentlyUsedSceneGuid-0
-      flags: 0
-    RecentlyUsedSceneGuid-1:
+    RecentlyUsedSceneGuid-0:
       value: 05540c515654500c590d097514255e4446161d2f7d7825342b794831e0e46d39
       flags: 0
+    RecentlyUsedSceneGuid-1:
+      value: 5a05505757075e0f08085c764176074414151e2c78707062282d1f65b0b9623c
+      flags: 0
     RecentlyUsedSceneGuid-2:
-      value: 05525156570c505a5e5f082711725e44444f1b282f29253175704562e1e56568
+      value: 5701045103070f0f585855754176074446154e7f2e7b74687b701865e4e1366b
       flags: 0
     RecentlyUsedSceneGuid-3:
-      value: 515250075c0c595e5f5a5e71122159444e4e4a2f7a7d7f602f284d66b4b76661
+      value: 55010d5507535e58555e587646720e44124f4a7d797171317f7e1f6ab3b93139
       flags: 0
     RecentlyUsedSceneGuid-4:
-      value: 0206055754020d5f5958097345210d4442161b7c2f2a20657c7e1e67bab1316e
+      value: 06010057000d0f02555b5a74112508444415197d287e20367a7b4a37e0e5316a
       flags: 0
     RecentlyUsedSceneGuid-5:
-      value: 540603035704080e5b0c5a2742760a44404e492b2f7b7760282c4931b3b9646c
-      flags: 0
-    RecentlyUsedSceneGuid-6:
-      value: 5506075104545d5e5b595b7743730744474e4b2c747f7f332c2c4d63b7e6646d
-      flags: 0
-    RecentlyUsedSceneGuid-7:
       value: 0700525e00050d0d0f570d2043710944441619722e292064287f1e67b5b26d3a
       flags: 0
-    RecentlyUsedSceneGuid-8:
-      value: 055206500003580d5e0c0e7a42725a44404e4c7b7e7c22667a7d4460b5b7373c
+    RecentlyUsedSceneGuid-6:
+      value: 515250075c0c595e5f5a5e71122159444e4e4a2f7a7d7f602f284d66b4b76661
       flags: 0
-    RecentlyUsedSceneGuid-9:
-      value: 055206500003580d5e0c0e7a42725a44404e4c7b7e7c22667a7d4460b5b7373c
-      flags: 0
-    vcSharedLogLevel:
-      value: 0d5e400f0650
+    RecentlyUsedSceneGuid-7:
+      value: 5506075104545d5e5b595b7743730744474e4b2c747f7f332c2c4d63b7e6646d
       flags: 0
   m_VCAutomaticAdd: 1
   m_VCDebugCom: 0
   m_VCDebugCmd: 0
   m_VCDebugOut: 0
   m_SemanticMergeMode: 2
-  m_DesiredImportWorkerCount: 4
+  m_DesiredImportWorkerCount: 3
   m_StandbyImportWorkerCount: 2
   m_IdleImportWorkerShutdownDelay: 60000
   m_VCShowFailedCheckout: 1

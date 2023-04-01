@@ -15,7 +15,7 @@ public class HouseState : BaseState
 
     public override void OnEnter()
     {
-        SceneManager.LoadScene("house");
+        SceneManager.LoadScene("HomeScene");
 
     }
 
