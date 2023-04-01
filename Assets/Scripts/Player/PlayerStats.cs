@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
 {
 
     [System.Serializable] public class customIntEvent : UnityEvent<int, int, int, int> { } //Lets me add a float arg to event call;
-    public UnityEvent<PlayerStatsEventArgs> StatsChangeEvent; 
+    public UnityEvent<PlayerStatsEventArgs> StatsChangeEvent = new UnityEvent<PlayerStatsEventArgs>(); 
 
     [SerializeField]
     [Range(0, 100)]
@@ -40,7 +40,7 @@ public class PlayerStats : MonoBehaviour
         switch (arg0.Command)
         {
             case PlayerStatsEventArgs.cmd.IncreaseFood:
-                Food += arg0.Value; 
+                Food += arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.DecreaseFood:
                 Food -= arg0.Value;
@@ -97,17 +97,6 @@ public class PlayerStats : MonoBehaviour
     {
         updateUI.Invoke(Money, Food, Strength, Social);
     }
-    private void OnValidate()
-    {
-        if(Food>100)
-        {
-            Debug.Log("WAY TOO MUCH FOOD BRo"); 
-        }
-        if( Food <= 0)
-        {
-            // ha ha you're dead 
-        }
-    }
 }
 public class PlayerStatsEventArgs : EventArgs
 {
@@ -124,8 +113,12 @@ public class PlayerStatsEventArgs : EventArgs
         Command= command;
         Truth= val;
     }
+    /// <summary>
+    ///  Make sure while using this send the corrct value type 
+    /// </summary>
     public enum cmd
     {
+        // send Ints for this
         IncreaseFood,
         DecreaseFood,
         IncreaseMoney,
@@ -134,6 +127,7 @@ public class PlayerStatsEventArgs : EventArgs
         DecreaseStreangth, 
         IncreaseSocial,
         DecreaseSocial,
+        // send bools for this 
         HasCar
     }
 }

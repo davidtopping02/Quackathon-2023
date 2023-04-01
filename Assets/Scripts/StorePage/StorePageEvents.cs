@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class StorePageEvents : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void BuyGoodFood()
     {
-        
+        PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseFood, 10);
+        GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
+        args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseStreangth, 10);
+        GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
+    }
+    public void BuyBadFood() 
+    {
+        PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseFood, 5);
+        GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
+        args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseStreangth, 5);
+        GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
+    }
+    public void BuymehFood() 
+    { 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void BuyCar()
     {
         
     }
