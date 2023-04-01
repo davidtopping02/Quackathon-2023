@@ -5,7 +5,7 @@ public class GameController : MonoBehaviour
 {
 
     [SerializeField]
-    private GameObject player;
+    public GameObject player;
     public bool isDebug = false;
     public GameObject timeInDay;
 
@@ -70,6 +70,10 @@ public class GameController : MonoBehaviour
             currentState = newState;
             currentState.OnEnter();
         }
+    }
+    private void OnDestroy()
+    {
+        Destroy(gameObject);
     }
 
 }
