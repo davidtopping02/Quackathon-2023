@@ -1,10 +1,8 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HomeState : BaseState
 {
-    // main game scene
-    public GameObject character;
-
     public HomeState() : base()
     {
         Debug.Log("In HomeState");
@@ -17,9 +15,9 @@ public class HomeState : BaseState
 
     public override void OnEnter()
     {
+        SceneManager.LoadScene("HomeScene");
+        Debug.Log(GameController.Instance.player.GetComponent<PlayerStats>().Money);
 
-        // loading the main game scene
-        //SceneManager.LoadScene("Home");
     }
 
 }
