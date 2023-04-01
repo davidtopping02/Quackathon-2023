@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,7 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
 
     [System.Serializable] public class customIntEvent : UnityEvent<int, int, int, int> { } //Lets me add a float arg to event call;
-    public UnityEvent<PlayerStatsEventArgs> StatsChangeEvent = new UnityEvent<PlayerStatsEventArgs>(); 
+    public UnityEvent<PlayerStatsEventArgs> StatsChangeEvent = new UnityEvent<PlayerStatsEventArgs>();
 
     [SerializeField]
     [Range(0, 100)]
@@ -26,13 +24,13 @@ public class PlayerStats : MonoBehaviour
     [Range(0, 100)]
     private int Social = 100;
 
-    private bool HasCar = false; 
+    private bool HasCar = false;
 
     public customIntEvent updateUI;
 
     public PlayerStats()
     {
-        StatsChangeEvent.AddListener(OnChangeStats); 
+        StatsChangeEvent.AddListener(OnChangeStats);
     }
 
     private void OnChangeStats(PlayerStatsEventArgs arg0)
@@ -52,15 +50,16 @@ public class PlayerStats : MonoBehaviour
                 Money -= arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.IncreaseStreangth:
-                Strength += arg0.Value; 
+                Strength += arg0.Value;
+                Debug.Log(Strength + " ");
                 break;
             case PlayerStatsEventArgs.cmd.DecreaseStreangth:
                 Strength -= arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.IncreaseSocial:
-                Social+= arg0.Value;
+                Social += arg0.Value;
                 break;
-            case PlayerStatsEventArgs.cmd.DecreaseSocial: 
+            case PlayerStatsEventArgs.cmd.DecreaseSocial:
                 Social -= arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.HasCar:
@@ -102,16 +101,16 @@ public class PlayerStatsEventArgs : EventArgs
 {
     public cmd Command;
     public int Value;
-    public bool Truth; 
+    public bool Truth;
     public PlayerStatsEventArgs(cmd command, int val)
     {
-        Command= command;
-        Value= val;
+        Command = command;
+        Value = val;
     }
     public PlayerStatsEventArgs(cmd command, bool val)
     {
-        Command= command;
-        Truth= val;
+        Command = command;
+        Truth = val;
     }
     /// <summary>
     ///  Make sure while using this send the corrct value type 
@@ -124,7 +123,7 @@ public class PlayerStatsEventArgs : EventArgs
         IncreaseMoney,
         DecreaseMoney,
         IncreaseStreangth,
-        DecreaseStreangth, 
+        DecreaseStreangth,
         IncreaseSocial,
         DecreaseSocial,
         // send bools for this 

@@ -9,10 +9,13 @@ public class DumbellScript : MonoBehaviour
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(OnClick);
+
     }
 
     void OnClick()
     {
-        GameController.Instance.player.GetComponent<PlayerStats>.updateStrength(5);
+        GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseStreangth, 1));
     }
+
+
 }
