@@ -15,7 +15,7 @@ public class HomeState : BaseState
 
     public override void OnEnter()
     {
-        SceneManager.LoadScene("HomeScene");
+        SceneManager.LoadScene("gym");
         Debug.Log(GameController.Instance.player.GetComponent<PlayerStats>().Money);
 
     }
