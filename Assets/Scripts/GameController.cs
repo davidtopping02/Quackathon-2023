@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     public GameObject player;
     public bool isDebug = false;
+    public GameObject timeInDay;
 
     // state machine fields
     public static GameController Instance { get; private set; }
@@ -32,14 +33,16 @@ public class GameController : MonoBehaviour
     {
         //initialise the player object
         Instantiate(player, transform.position, transform.rotation);
+        Instantiate(timeInDay, transform.position, transform.rotation);
         changeState.AddListener(HandeStateChange);
+
         // initialises the current state to the home state on start-up
         if (isDebug)
         {
             return;
         }
         currentState = new HomeState();
-       
+
         currentState.OnEnter();
     }
 
