@@ -19,11 +19,14 @@ public class StorePageEvents : MonoBehaviour
         GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
     }
     public void BuymehFood() 
-    { 
+    {
+        PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseFood, 5);
+        GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
     }
 
     public void BuyCar()
     {
-        
+        PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.HasCar,true);
+        GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
     }
 }
