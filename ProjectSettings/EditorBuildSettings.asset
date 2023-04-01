@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/HomeScene.unity
     guid: 6737aa4e67753084193f879cae005f05
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/home.unity
     guid: fce0299a31dea1a428cbcaca8981ce10
   - enabled: 1
     path: Assets/Scenes/CommuteScene.unity
