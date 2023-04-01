@@ -10,21 +10,21 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField]
     [Range(0, 100)]
-    private int Food = 100;
+    public int Food = 100;// die on zero
+
+    [SerializeField]
+    public int Money = 100;// die on zero
+
 
     [SerializeField]
     [Range(0, 100)]
-    private int Money = 100;
+    public int Strength = 100; 
 
     [SerializeField]
     [Range(0, 100)]
-    private int Strength = 100;
+    public int Social = 100; // die on zero
 
-    [SerializeField]
-    [Range(0, 100)]
-    private int Social = 100;
-
-    private bool HasCar = false;
+    public bool HasCar = false;
 
     public customIntEvent updateUI;
 
