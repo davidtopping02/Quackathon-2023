@@ -1,16 +1,24 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
-    public static GameController instance { get; private set; }
+
+    [SerializeField]
+    public GameObject player;
+
+    // state machine fields
+    public static GameController Instance { get; private set; }
+    public UnityEvent<State> changeState = new UnityEvent<State>();
+
     private State currentState;
 
     // Initialize and persist GameManager script across scenes.
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -22,17 +30,23 @@ public class GameController : MonoBehaviour
     void Start()
     {
         //initialise the player object
+        Instantiate(player, transform.position, transform.rotation);
+        changeState.AddListener(HandeStateChange);
 
         // initialises the current state to the home state on start-up
-        // pass player into home state
         currentState = new HomeState();
         currentState.OnEnter();
+    }
+
+    private void HandeStateChange(State stateChange)
+    {
+        HandleNewState(stateChange, currentState);
     }
 
     void Update()
     {
         // On update, call the OnUpdate method of the current state. 
-        HandleNewState(currentState.OnUpdate(), currentState);
+        currentState.OnUpdate();
     }
 
 
