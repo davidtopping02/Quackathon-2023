@@ -11,9 +11,9 @@ public class EndOfDayStats : MonoBehaviour
     public TextMeshProUGUI social;
     private void Awake()
     {
-        money.text = "Money = " + GameController.Instance.player.GetComponent<PlayerStats>().Money.ToString();
-        food.text = "Food = " + GameController.Instance.player.GetComponent<PlayerStats>().Food.ToString();
-        strength.text = "Strength = " + GameController.Instance.player.GetComponent<PlayerStats>().Strength.ToString();
-        social.text = "Social = " + GameController.Instance.player.GetComponent<PlayerStats>().Social.ToString();
+        money.text = "Money = " + GameController.Instance.player.Money.ToString();
+        food.text = "Food = " + GameController.Instance.player.Food.ToString();
+        strength.text = "Strength = " + GameController.Instance.player.Strength.ToString();
+        social.text = "Social = " + GameController.Instance.player.Social.ToString();
     }
 }

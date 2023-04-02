@@ -3,24 +3,39 @@ using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
-
-    [SerializeField]
-    public GameObject player;
     public bool isDebug = false;
     public GameObject timeInDay = null;
 
     // state machine fields
-    public static GameController Instance { get; private set; }
+
+    private static GameController instance = null; 
+    public static GameController Instance { get {
+            if(instance == null)
+            {
+                instance = FindObjectOfType<GameController>();
+            }
+            if (instance == null)
+            {
+                GameObject gObj = new GameObject();
+                gObj.name = "GameController";
+                instance = gObj.AddComponent<GameController>();
+                DontDestroyOnLoad(gObj);
+            }
+            return instance;
+        } 
+    }
     public UnityEvent<State> changeState = new UnityEvent<State>();
+    public PlayerStats player = new PlayerStats();
 
     private State currentState;
 
     // Initialize and persist GameManager script across scenes.
     private void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
+            player = new PlayerStats();
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -32,7 +47,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         //initialise the player object
-        Instantiate(player, transform.position, transform.rotation, this.transform);
+        //Instantiate(player, transform.position, transform.rotation, this.transform);
         changeState.AddListener(HandeStateChange);
 
         // initialises the current state to the home state on start-up
@@ -72,6 +87,7 @@ public class GameController : MonoBehaviour
                     Instantiate(timeInDay, transform.position, transform.rotation, this.transform);
                 else
                 {
+
                     // timer reset
                     timeInDay.GetComponent<TimeManger>().resetTimer();
                 }

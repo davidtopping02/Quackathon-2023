@@ -14,7 +14,7 @@ public class DumbellScript : MonoBehaviour
 
     void OnClick()
     {
-        GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseStreangth, 1));
+        GameController.Instance.player.StatsChangeEvent.Invoke(new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseStreangth, 1));
     }
 
 
