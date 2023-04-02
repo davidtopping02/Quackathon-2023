@@ -26,6 +26,7 @@ public class TimeManger : MonoBehaviour
 
             if(hasEnded)
             {
+                Destroy(gameObject);
                 return; 
             }
 
