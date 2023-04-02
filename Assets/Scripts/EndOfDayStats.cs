@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.Services.CloudSave;
+using System;
+using System.Threading.Tasks;
 
 public class EndOfDayStats : MonoBehaviour
 {
@@ -15,6 +18,7 @@ public class EndOfDayStats : MonoBehaviour
         food.text = "Food = " + GameController.Instance.player.Food.ToString();
         strength.text = "Strength = " + GameController.Instance.player.Strength.ToString();
         social.text = "Social = " + GameController.Instance.player.Social.ToString();
+        CloudSaceAsync();
     }
 
     
@@ -22,5 +26,12 @@ public class EndOfDayStats : MonoBehaviour
     {
         State state = new HomeState();
         GameController.Instance.changeState.Invoke(state);
+       
+    }
+
+    private async Task CloudSaceAsync()
+    {
+        var data = new Dictionary<string, object> { { "PlayerData", GameController.Instance.player } };
+        await CloudSaveService.Instance.Data.ForceSaveAsync(data);
     }
 }

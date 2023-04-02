@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -49,6 +50,7 @@ public class PlayerStats
     }
 
     public bool HasCar { get; private set; }
+    public bool HasDoes { get; private set; }
     public uint DaysSurvived { get; private set; }
 
     public customIntEvent updateUI = new customIntEvent(); 
@@ -63,7 +65,8 @@ public class PlayerStats
         Money = 100;
         Strength = 100;
         Social = 100;
-        HasCar = false;
+        HasCar = true;
+        HasDoes = false;
     }
 
     private void OnChangeStats(PlayerStatsEventArgs arg0)

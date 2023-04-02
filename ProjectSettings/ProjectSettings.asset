@@ -866,11 +866,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 12dfd1cb-dee8-4f77-aa7a-ee20d0199c6e
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: AI_works
+  organizationId: jaibeer72
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
