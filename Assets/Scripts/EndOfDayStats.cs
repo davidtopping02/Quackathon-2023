@@ -16,6 +16,8 @@ public class EndOfDayStats : MonoBehaviour
         strength.text = "Strength = " + GameController.Instance.player.Strength.ToString();
         social.text = "Social = " + GameController.Instance.player.Social.ToString();
     }
+
+    
     public void GoToNextDay()
     {
         State state = new HomeState();

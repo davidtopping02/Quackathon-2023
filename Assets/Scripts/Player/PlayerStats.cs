@@ -49,6 +49,7 @@ public class PlayerStats
     }
 
     public bool HasCar { get; private set; }
+    public uint DaysSurvived { get; private set; }
 
     public customIntEvent updateUI = new customIntEvent(); 
     private void Start()
