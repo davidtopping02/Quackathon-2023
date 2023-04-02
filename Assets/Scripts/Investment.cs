@@ -1,32 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Investment : MonoBehaviour
 {
+
+    public TextMeshProUGUI ISAText;
+    public TextMeshProUGUI LISAText;
+    public TextMeshProUGUI PensionText;
     // Start is called before the first frame update
     invest classInvest = new invest();
 
-
-
-
-
-   
     public void ISA()
     {
-        classInvest.addToISA();
-        updateMoney();
+        if (GameController.Instance.player.Money > 1)
+        {
+            Debug.Log("Invested");
+            classInvest.addToISA();
+            ISAText.text = "Amount in account: " + classInvest.getISA().ToString();
+            updateMoney();
+        }
     }
     public void Lifetime()
     {
-        classInvest.addTolifetimeISA();
-        updateMoney();
+        if (GameController.Instance.player.Money > 1)
+        {
+            classInvest.addTolifetimeISA();
+            LISAText.text = "Amount in account: " + classInvest.getLISA().ToString();
+            updateMoney();
+        }
     }
     
     public void Pension()
     {
-        classInvest.addToPension();
-        updateMoney();
+            if (GameController.Instance.player.Money > 1)
+            {
+                classInvest.addToPension();
+                PensionText.text = "Amount in account: " + classInvest.getPension().ToString();
+                updateMoney();
+            }
     }
     public void RemoveMoney()
     {
