@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class EndOfDayStats : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class EndOfDayStats : MonoBehaviour
         food.text = "Food = " + GameController.Instance.player.Food.ToString();
         strength.text = "Strength = " + GameController.Instance.player.Strength.ToString();
         social.text = "Social = " + GameController.Instance.player.Social.ToString();
+
+        //Increase the days survived
+        PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseDays,1);
+        GameController.Instance.player.StatsChangeEvent.Invoke(args);
     }
 
 

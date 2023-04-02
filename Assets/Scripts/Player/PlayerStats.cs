@@ -28,7 +28,7 @@ public class PlayerStats
         }
     }// die on zero
 
-    private int money = 50;
+    private int money = 5;
     public int Money
     {
         get { return money; }
@@ -44,7 +44,7 @@ public class PlayerStats
         }
     }// die on zero
 
-    private int strength = 20;
+    private int strength = 50;
     public int Strength
     {
         get { return strength; }
@@ -89,8 +89,8 @@ public class PlayerStats
     {
         StatsChangeEvent.AddListener(OnChangeStats);
         Food = 20;
-        Money = 50;
-        Strength = 20;
+        Money = 5;
+        Strength = 50;
         Social = 20;
         HasCar = false;
         
@@ -128,7 +128,10 @@ public class PlayerStats
             case PlayerStatsEventArgs.cmd.HasCar:
                 HasCar = arg0.Truth;
                 break;
-            
+            case PlayerStatsEventArgs.cmd.IncreaseDays:
+                DaysSurvived++;
+                break;
+
         }
         redrawUI();
     }
@@ -167,6 +170,7 @@ public class PlayerStatsEventArgs : EventArgs
         DecreaseStreangth,
         IncreaseSocial,
         DecreaseSocial,
+        IncreaseDays,
         
         // send bools for this 
         HasCar
