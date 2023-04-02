@@ -10,6 +10,20 @@ public class invest
     
     // Use this for initialization
   
+    public float getISA()
+    {
+        return ISA;
+    }
+
+    public float getLISA()
+    {
+        return lifetimeISA;
+    }
+
+    public float getPension()
+    {
+        return pension;
+    }
 
     // Update is called once per frame
 
