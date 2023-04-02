@@ -26,7 +26,7 @@ public class GymController : MonoBehaviour
         GameController.Instance.player.StatsChangeEvent.Invoke(args);
 
         //Lower food after gym
-        args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseFood, -10);
+        args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseFood, 10);
         GameController.Instance.player.StatsChangeEvent.Invoke(args);
 
 
