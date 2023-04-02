@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class EndOfDayStats : MonoBehaviour
 {
@@ -17,7 +15,7 @@ public class EndOfDayStats : MonoBehaviour
         social.text = "Social = " + GameController.Instance.player.Social.ToString();
     }
 
-    
+
     public void GoToNextDay()
     {
         State state = new HomeState();

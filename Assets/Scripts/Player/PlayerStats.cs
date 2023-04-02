@@ -2,56 +2,83 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerStats 
+public class PlayerStats
 {
 
     [System.Serializable] public class customIntEvent : UnityEvent<int, int, int, int> { } //Lets me add a float arg to event call;
     public UnityEvent<PlayerStatsEventArgs> StatsChangeEvent = new UnityEvent<PlayerStatsEventArgs>();
 
-    private int food = 20; 
-    public int Food { get { return food; } 
-        private set {
-            food = Math.Clamp(food, 0, 100);
-            if(food<=0)
+    public UnityEvent<String> death = new UnityEvent<String>();
+
+    private int food = 20;
+    public int Food
+    {
+        get { return food; }
+        private set
+        {
+
+            food = Math.Clamp(value, 0, 100);
+            if (food <= 0)
             {
-                // Commence death
+                Debug.Log("death");
+                State state = new FoodDeath();
+                GameController.Instance.changeState.Invoke(state);
             }
-        } 
+        }
     }// die on zero
 
     private int money = 50;
-    public int Money { get { return money; } private set {
+    public int Money
+    {
+        get { return money; }
+        private set
+        {
+            money = value;
             if (money <= 0)
             {
-                // Commence death
+                Debug.Log("death");
+                State state = new MoneyDeath();
+                GameController.Instance.changeState.Invoke(state);
             }
-        } 
+        }
     }// die on zero
 
     private int strength = 20;
-    public int Strength { get { return strength; } private set {
-            strength = Math.Clamp(strength, 0, 100);
+    public int Strength
+    {
+        get { return strength; }
+        private set
+        {
+            strength = Math.Clamp(value, 0, 100);
             if (strength <= 0)
             {
-                // Commence death
+                Debug.Log("death");
+                State state = new StrengthDeath();
+                GameController.Instance.changeState.Invoke(state);
             }
         }
     }
 
-    private int social = 20; 
-    public int Social { get { return social; } private set {
-            social = Math.Clamp(social, 0, 100);
+    private int social = 20;
+    public int Social
+    {
+        get { return social; }
+        private set
+        {
+            social = Math.Clamp(value, 0, 100);
             if (social <= 0)
             {
-                // Commence death
+                Debug.Log("death");
+                State state = new SocialDeath();
+                GameController.Instance.changeState.Invoke(state);
             }
-        } 
+        }
     }
 
     public bool HasCar { get; private set; }
     public uint DaysSurvived { get; private set; }
 
-    public customIntEvent updateUI = new customIntEvent(); 
+    public customIntEvent updateUI = new customIntEvent();
     private void Start()
     {
         Debug.Log(Money);
@@ -71,29 +98,29 @@ public class PlayerStats
         switch (arg0.Command)
         {
             case PlayerStatsEventArgs.cmd.IncreaseFood:
-                food += arg0.Value;
+                Food += arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.DecreaseFood:
-                food -= arg0.Value;
+                Food -= arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.IncreaseMoney:
-                money += arg0.Value;
+                Money += arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.DecreaseMoney:
-                money -= arg0.Value;
+                Money -= arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.IncreaseStreangth:
-                strength += arg0.Value;
+                Strength += arg0.Value;
                 Debug.Log(Strength + " ");
                 break;
             case PlayerStatsEventArgs.cmd.DecreaseStreangth:
-                strength -= arg0.Value;
+                Strength -= arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.IncreaseSocial:
-                social += arg0.Value;
+                Social += arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.DecreaseSocial:
-                social -= arg0.Value;
+                Social -= arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.HasCar:
                 HasCar = arg0.Truth;
@@ -104,7 +131,6 @@ public class PlayerStats
 
     public void redrawUI()
     {
-        Debug.Log("called"); 
         updateUI.Invoke(Money, Food, Strength, Social);
     }
 }
