@@ -2,19 +2,52 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats 
 {
 
     [System.Serializable] public class customIntEvent : UnityEvent<int, int, int, int> { } //Lets me add a float arg to event call;
     public UnityEvent<PlayerStatsEventArgs> StatsChangeEvent = new UnityEvent<PlayerStatsEventArgs>();
 
-    public int Food { get; private set; }// die on zero
+    private int food = 100; 
+    public int Food { get { return food; } 
+        private set {
+            food = Math.Clamp(food, 0, 100);
+            if(food<=0)
+            {
+                // Commence death
+            }
+        } 
+    }// die on zero
 
-    public int Money { get; private set; }// die on zero
+    private int money = 100;
+    public int Money { get { return money; } private set {
+            money = Math.Clamp(food, 0, 100);
+            if (money <= 0)
+            {
+                // Commence death
+            }
+        } 
+    }// die on zero
 
-    public int Strength { get; private set; }
+    private int strength = 100;
+    public int Strength { get { return strength; } private set {
+            strength = Math.Clamp(food, 0, 100);
+            if (strength <= 0)
+            {
+                // Commence death
+            }
+        }
+    }
 
-    public int Social { get; private set; }
+    private int social = 100; 
+    public int Social { get { return social; } private set {
+            social = Math.Clamp(food, 0, 100);
+            if (social <= 0)
+            {
+                // Commence death
+            }
+        } 
+    }
 
     public bool HasCar { get; private set; }
 

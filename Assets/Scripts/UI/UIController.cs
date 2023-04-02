@@ -14,13 +14,17 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        GameController.Instance.player.GetComponent<PlayerStats>().updateUI.AddListener(redrawUI);
+        GameController.Instance.player.updateUI.AddListener(redrawUI);
         redrawUI(
-            GameController.Instance.player.GetComponent<PlayerStats>().Money,
-            GameController.Instance.player.GetComponent<PlayerStats>().Food,
-            GameController.Instance.player.GetComponent<PlayerStats>().Strength,
-            GameController.Instance.player.GetComponent<PlayerStats>().Social
+            GameController.Instance.player.Money,
+            GameController.Instance.player.Food,
+            GameController.Instance.player.Strength,
+            GameController.Instance.player.Social
             );
+    }
+    private void OnDestroy()
+    {
+        GameController.Instance.player.updateUI.RemoveListener(redrawUI);
     }
 
     public void redrawUI(int money, int food, int strength, int social)

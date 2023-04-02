@@ -32,11 +32,11 @@ public class TimeManger : MonoBehaviour
             hasEnded = true;
             // penalise the player
             PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseStreangth, 5);
-            GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
+            GameController.Instance.player.StatsChangeEvent.Invoke(args);
             args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseSocial, 5);
-            GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
+            GameController.Instance.player.StatsChangeEvent.Invoke(args);
             args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseFood, 5);
-            GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
+            GameController.Instance.player.StatsChangeEvent.Invoke(args);
 
             // Invoke the event with a string parameter
             State endstate = new EndOfDayState();

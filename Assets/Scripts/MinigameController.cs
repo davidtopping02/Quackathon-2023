@@ -60,7 +60,7 @@ public class MinigameController : MonoBehaviour
         moneySummary.text = score.ToString();
 
         PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseMoney, score);
-        GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
+        GameController.Instance.player.StatsChangeEvent.Invoke(args);
 
 
     }
