@@ -59,7 +59,7 @@ public class BarGameController : MonoBehaviour
         bullseyeSummary.text = "Bullseyes = " + bullseyes.ToString();
 
         PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseSocial, score);
-        GameController.Instance.player.GetComponent<PlayerStats>().StatsChangeEvent.Invoke(args);
+        GameController.Instance.player.StatsChangeEvent.Invoke(args);
 
 
     }

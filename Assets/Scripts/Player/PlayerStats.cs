@@ -30,7 +30,7 @@ public class PlayerStats
 
     private int strength = 100;
     public int Strength { get { return strength; } private set {
-            strength = Math.Clamp(food, 0, 100);
+            strength = Math.Clamp(strength, 0, 100);
             if (strength <= 0)
             {
                 // Commence death
@@ -40,7 +40,7 @@ public class PlayerStats
 
     private int social = 100; 
     public int Social { get { return social; } private set {
-            social = Math.Clamp(food, 0, 100);
+            social = Math.Clamp(social, 0, 100);
             if (social <= 0)
             {
                 // Commence death

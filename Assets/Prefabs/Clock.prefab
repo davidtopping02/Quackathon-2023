@@ -140,6 +140,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8576271572298495073}
     m_Modifications:
+    - target: {fileID: 7607934528607823064, guid: 410e2e1ae50b9da4fa5906e8db5b0ace, type: 3}
+      propertyPath: m_UpHours
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7607934528607823065, guid: 410e2e1ae50b9da4fa5906e8db5b0ace, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -227,6 +231,10 @@ PrefabInstance:
     - target: {fileID: 7607934528607823066, guid: 410e2e1ae50b9da4fa5906e8db5b0ace, type: 3}
       propertyPath: m_Name
       value: DayTimeText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607934528607823071, guid: 410e2e1ae50b9da4fa5906e8db5b0ace, type: 3}
+      propertyPath: m_fontSize
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 7607934528607823071, guid: 410e2e1ae50b9da4fa5906e8db5b0ace, type: 3}
       propertyPath: m_margin.w

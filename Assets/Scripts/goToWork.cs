@@ -17,8 +17,16 @@ public class goToWork : MonoBehaviour
 
    public void carButton()
    {
-        buttonClickHandler();
+        if(GameController.Instance.player.HasCar)
+        {
+            buttonClickHandler();
+        }
    }
+
+    public bool makeButtonInActive()
+    {
+        return GameController.Instance.player.HasCar;
+    }
 
     private void buttonClickHandler()
     {
