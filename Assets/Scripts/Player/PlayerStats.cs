@@ -8,7 +8,7 @@ public class PlayerStats
     [System.Serializable] public class customIntEvent : UnityEvent<int, int, int, int> { } //Lets me add a float arg to event call;
     public UnityEvent<PlayerStatsEventArgs> StatsChangeEvent = new UnityEvent<PlayerStatsEventArgs>();
 
-
+    private int food = 20;
     public int Food { get { return food; } 
         private set {
             food = Math.Clamp(food, 0, 100);

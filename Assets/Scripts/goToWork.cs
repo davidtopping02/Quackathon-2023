@@ -14,9 +14,12 @@ public class goToWork : MonoBehaviour
 
    public void busButton()
    {
-        PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseMoney, 10);
-        GameController.Instance.player.StatsChangeEvent.Invoke(args);
-        buttonClickHandler();
+        if (GameController.Instance.player.Money >= 10)
+        {
+            PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseMoney, 10);
+            GameController.Instance.player.StatsChangeEvent.Invoke(args);
+            buttonClickHandler();
+        }
    }
 
    public void carButton()
