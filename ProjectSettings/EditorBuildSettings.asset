@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/bank.unity
-    guid: cb96329227c3d9a4fbad28809d4b6699
-  - enabled: 1
     path: Assets/Scenes/bar.unity
     guid: 636b8aafd12f72b4882dd5188e3a4158
   - enabled: 1
@@ -27,9 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Furniture_props_tiles_showcase_Demo.unity
     guid: 94d12274ef041584bbff4862edb6296d
   - enabled: 1
-    path: Assets/Scenes/gym.unity
-    guid: fe873a974ce7dfa40aee10cdf05bbd9a
-  - enabled: 1
     path: Assets/Scenes/DeathScenes/foodDeath.unity
     guid: 334a55cf597edf544af76bdcff2fef50
   - enabled: 1
@@ -42,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DeathScenes/strengthDeath.unity
     guid: 05eb53030717b134abd1fd6c05c7bb1e
   - enabled: 1
+    path: Assets/Scenes/gym.unity
+    guid: fe873a974ce7dfa40aee10cdf05bbd9a
+  - enabled: 1
     path: Assets/Scenes/HomeScene.unity
     guid: 6737aa4e67753084193f879cae005f05
   - enabled: 1
@@ -53,6 +50,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: a71117dd46e15b244ac6cbf517c481e6
+  - enabled: 1
+    path: Assets/Scenes/store.unity
+    guid: e041e8f98566af742ba7d6ff727dbee2
+  - enabled: 1
+    path: Assets/Scenes/work.unity
+    guid: d1f8e0d6b9ab32642aa8baf4e6c4729b
   - enabled: 1
     path: Assets/Scenes/bank.unity
     guid: cb96329227c3d9a4fbad28809d4b6699

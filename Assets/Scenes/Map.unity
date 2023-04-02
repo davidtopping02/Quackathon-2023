@@ -207,9 +207,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1167591859}
-        m_TargetAssemblyTypeName: goToWork, Assembly-CSharp
-        m_MethodName: busButton
+      - m_Target: {fileID: 69143216}
+        m_TargetAssemblyTypeName: MapOverview, Assembly-CSharp
+        m_MethodName: gymEntry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -469,9 +469,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69143213}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12, y: 0, z: 1}
-  m_LocalScale: {x: 30, y: 14, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.11999941, y: 0.00000023841858, z: 1}
+  m_LocalScale: {x: 29.999998, y: 14, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2159,9 +2159,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1167591859}
-        m_TargetAssemblyTypeName: goToWork, Assembly-CSharp
-        m_MethodName: busButton
+      - m_Target: {fileID: 69143216}
+        m_TargetAssemblyTypeName: MapOverview, Assembly-CSharp
+        m_MethodName: barEntry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
