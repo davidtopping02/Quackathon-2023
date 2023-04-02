@@ -21,7 +21,6 @@ public class PlayerStats
 
     private int money = 100;
     public int Money { get { return money; } private set {
-            money = Math.Clamp(food, 0, 100);
             if (money <= 0)
             {
                 // Commence death
@@ -51,7 +50,7 @@ public class PlayerStats
 
     public bool HasCar { get; private set; }
 
-    public customIntEvent updateUI;
+    public customIntEvent updateUI = new customIntEvent(); 
     private void Start()
     {
         Debug.Log(Money);
@@ -71,29 +70,29 @@ public class PlayerStats
         switch (arg0.Command)
         {
             case PlayerStatsEventArgs.cmd.IncreaseFood:
-                Food += arg0.Value;
+                food += arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.DecreaseFood:
-                Food -= arg0.Value;
+                food -= arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.IncreaseMoney:
-                Money += arg0.Value;
+                money += arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.DecreaseMoney:
-                Money -= arg0.Value;
+                money -= arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.IncreaseStreangth:
-                Strength += arg0.Value;
+                strength += arg0.Value;
                 Debug.Log(Strength + " ");
                 break;
             case PlayerStatsEventArgs.cmd.DecreaseStreangth:
-                Strength -= arg0.Value;
+                strength -= arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.IncreaseSocial:
-                Social += arg0.Value;
+                social += arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.DecreaseSocial:
-                Social -= arg0.Value;
+                social -= arg0.Value;
                 break;
             case PlayerStatsEventArgs.cmd.HasCar:
                 HasCar = arg0.Truth;

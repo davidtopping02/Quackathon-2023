@@ -87,6 +87,7 @@ public class GameController : MonoBehaviour
                     Instantiate(timeInDay, transform.position, transform.rotation, this.transform);
                 else
                 {
+
                     // timer reset
                     timeInDay.GetComponent<TimeManger>().resetTimer();
                 }

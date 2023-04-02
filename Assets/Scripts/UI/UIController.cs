@@ -22,10 +22,6 @@ public class UIController : MonoBehaviour
             GameController.Instance.player.Social
             );
     }
-    private void OnDestroy()
-    {
-        GameController.Instance.player.updateUI.RemoveListener(redrawUI);
-    }
 
     public void redrawUI(int money, int food, int strength, int social)
     {
