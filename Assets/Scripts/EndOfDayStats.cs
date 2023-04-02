@@ -23,6 +23,7 @@ public class EndOfDayStats : MonoBehaviour
         PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseDays,1);
         GameController.Instance.player.StatsChangeEvent.Invoke(args);
         CloudSaceAsync();
+        Destroy(GameController.Instance.timeInDay); 
     }
 
 
@@ -30,7 +31,6 @@ public class EndOfDayStats : MonoBehaviour
     {
         State state = new HomeState();
         GameController.Instance.changeState.Invoke(state);
-       
     }
 
     private async Task CloudSaceAsync()

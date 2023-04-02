@@ -24,6 +24,7 @@ public class PlayerStats
             {
                 Debug.Log("death");
                 State state = new FoodDeath();
+                HasDied= true;
                 GameController.Instance.changeState.Invoke(state);
             }
         }
@@ -40,6 +41,7 @@ public class PlayerStats
             {
                 Debug.Log("death");
                 State state = new MoneyDeath();
+                HasDied = true;
                 GameController.Instance.changeState.Invoke(state);
             }
         }
@@ -57,6 +59,7 @@ public class PlayerStats
             {
                 Debug.Log("death");
                 State state = new StrengthDeath();
+                HasDied = true;
                 GameController.Instance.changeState.Invoke(state);
             }
         }
@@ -73,6 +76,7 @@ public class PlayerStats
             {
                 Debug.Log("death");
                 State state = new SocialDeath();
+                HasDied = true;
                 GameController.Instance.changeState.Invoke(state);
             }
         }
