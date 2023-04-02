@@ -42,6 +42,10 @@ public class MapOverview : MonoBehaviour
             {
                 bar();
             }
+            else if (hit.collider.name == "invest")
+            {
+                invest();
+            }
             else
             {
 
@@ -70,6 +74,12 @@ public class MapOverview : MonoBehaviour
         State barState = new BarState();
         GameController.Instance.changeState.Invoke(barState);
         
+    }
+    public void invest()
+    {
+        State investState = new InvestState();
+        GameController.Instance.changeState.Invoke(investState);
+
     }
 
     public void gym()

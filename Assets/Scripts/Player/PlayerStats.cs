@@ -4,10 +4,14 @@ using UnityEngine.Events;
 
 public class PlayerStats 
 {
-
+   
     [System.Serializable] public class customIntEvent : UnityEvent<int, int, int, int> { } //Lets me add a float arg to event call;
     public UnityEvent<PlayerStatsEventArgs> StatsChangeEvent = new UnityEvent<PlayerStatsEventArgs>();
 
+ 
+
+
+    
     private int food = 100; 
     public int Food { get { return food; } 
         private set {
@@ -64,6 +68,7 @@ public class PlayerStats
         Strength = 100;
         Social = 100;
         HasCar = false;
+        
     }
 
     private void OnChangeStats(PlayerStatsEventArgs arg0)
@@ -98,6 +103,7 @@ public class PlayerStats
             case PlayerStatsEventArgs.cmd.HasCar:
                 HasCar = arg0.Truth;
                 break;
+            
         }
         redrawUI();
     }
@@ -137,7 +143,9 @@ public class PlayerStatsEventArgs : EventArgs
         DecreaseStreangth,
         IncreaseSocial,
         DecreaseSocial,
+        
         // send bools for this 
         HasCar
+        
     }
 }
