@@ -8,11 +8,7 @@ public class PlayerStats
     [System.Serializable] public class customIntEvent : UnityEvent<int, int, int, int> { } //Lets me add a float arg to event call;
     public UnityEvent<PlayerStatsEventArgs> StatsChangeEvent = new UnityEvent<PlayerStatsEventArgs>();
 
- 
 
-
-    
-    private int food = 100; 
     public int Food { get { return food; } 
         private set {
             food = Math.Clamp(food, 0, 100);
@@ -23,7 +19,7 @@ public class PlayerStats
         } 
     }// die on zero
 
-    private int money = 100;
+    private int money = 50;
     public int Money { get { return money; } private set {
             if (money <= 0)
             {
@@ -32,7 +28,7 @@ public class PlayerStats
         } 
     }// die on zero
 
-    private int strength = 100;
+    private int strength = 20;
     public int Strength { get { return strength; } private set {
             strength = Math.Clamp(strength, 0, 100);
             if (strength <= 0)
@@ -42,7 +38,7 @@ public class PlayerStats
         }
     }
 
-    private int social = 100; 
+    private int social = 20; 
     public int Social { get { return social; } private set {
             social = Math.Clamp(social, 0, 100);
             if (social <= 0)
@@ -63,10 +59,10 @@ public class PlayerStats
     public PlayerStats()
     {
         StatsChangeEvent.AddListener(OnChangeStats);
-        Food = 100;
-        Money = 100;
-        Strength = 100;
-        Social = 100;
+        Food = 20;
+        Money = 50;
+        Strength = 20;
+        Social = 20;
         HasCar = false;
         
     }

@@ -22,7 +22,11 @@ public class GymController : MonoBehaviour
         summaryScreen.SetActive(true);
         moneySummary.text = score.ToString();
 
-        PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseMoney, score);
+        PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseStreangth, score);
+        GameController.Instance.player.StatsChangeEvent.Invoke(args);
+
+        //Lower food after gym
+        args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseFood, 10);
         GameController.Instance.player.StatsChangeEvent.Invoke(args);
 
 
