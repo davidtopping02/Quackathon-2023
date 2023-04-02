@@ -7,11 +7,15 @@ public class goToWork : MonoBehaviour
    
    public void walkButton()
    {
+        PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseStreangth, 20);
+        GameController.Instance.player.StatsChangeEvent.Invoke(args);
         buttonClickHandler();
    }
 
    public void busButton()
    {
+        PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseMoney, 10);
+        GameController.Instance.player.StatsChangeEvent.Invoke(args);
         buttonClickHandler();
    }
 
