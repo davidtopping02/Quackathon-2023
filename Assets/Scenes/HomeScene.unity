@@ -2086,5 +2086,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelBedRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 8460608155400013683, guid: d19f41223c37a324b85d5a953308cef5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.3503344
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460608155400013683, guid: d19f41223c37a324b85d5a953308cef5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -536.5292
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d19f41223c37a324b85d5a953308cef5, type: 3}
