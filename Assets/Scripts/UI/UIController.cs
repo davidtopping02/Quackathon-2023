@@ -29,6 +29,6 @@ public class UIController : MonoBehaviour
         foodImage.fillAmount = food / 100f;
         socialImage.fillAmount = social / 100f;
         strengthImage.fillAmount = strength / 100f;
-        Money.text = money.ToString();
+        Money.text = "$" + money.ToString();
     }
 }

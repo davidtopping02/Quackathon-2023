@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class EndOfDayState : BaseState
 {
+
+    invest classInvest = new invest();
     public EndOfDayState() : base()
     {
         Debug.Log("In end of day state");
@@ -12,6 +14,7 @@ public class EndOfDayState : BaseState
 
     void Start()
     {
+        classInvest.endOfDay();
     }
 
     public override void OnEnter()

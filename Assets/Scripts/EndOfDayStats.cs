@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
 using Unity.Services.CloudSave;
 using System;
 using System.Threading.Tasks;
+using UnityEngine;
 
 public class EndOfDayStats : MonoBehaviour
 {
@@ -21,7 +19,7 @@ public class EndOfDayStats : MonoBehaviour
         CloudSaceAsync();
     }
 
-    
+
     public void GoToNextDay()
     {
         State state = new HomeState();

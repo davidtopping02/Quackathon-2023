@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class BaseState : State
+public abstract class BaseState : MonoBehaviour, State
 {
 
     public virtual void OnEnter()

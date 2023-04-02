@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class MapOverview : MonoBehaviour
 {
     public GameObject goToWork;
+    public GameObject goToBar;
+    public GameObject goToGym;
 
     // Start is called before the first frame update
 
@@ -42,9 +44,15 @@ public class MapOverview : MonoBehaviour
             {
                 bar();
             }
+            else if (hit.collider.name == "invest")
+            {
+                invest();
+            }
             else
             {
-
+               /* goToWork.SetActive(false);
+                goToBar.SetActive(false);
+                goToGym.SetActive(false);*/
             }
 
         }
@@ -53,6 +61,8 @@ public class MapOverview : MonoBehaviour
     }
     public void work()
     {
+        goToBar.SetActive(false);
+        goToGym.SetActive(false);
         goToWork.SetActive(true);
 
     }
@@ -67,15 +77,24 @@ public class MapOverview : MonoBehaviour
 
     public void bar()
     {
-        State barState = new BarState();
-        GameController.Instance.changeState.Invoke(barState);
+        goToWork.SetActive(false);
+        goToGym.SetActive(false);
+        goToBar.SetActive(true);
         
+        
+    }
+    public void invest()
+    {
+        State investState = new InvestState();
+        GameController.Instance.changeState.Invoke(investState);
+
     }
 
     public void gym()
     {
-        State gymState = new GymState();
-        GameController.Instance.changeState.Invoke(gymState);
+        goToWork.SetActive(false);
+        goToBar.SetActive(false);
+        goToGym.SetActive(true);
     }
 
     public void house()
@@ -83,6 +102,30 @@ public class MapOverview : MonoBehaviour
         State houseState = new HouseState();
         GameController.Instance.changeState.Invoke(houseState);
 
+    }
+
+    public void barEntry()
+    {
+        Debug.Log("in here");
+        if (GameController.Instance.player.Money >= 10)
+        {
+            PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseMoney, 10);
+            GameController.Instance.player.StatsChangeEvent.Invoke(args);
+            State barState = new BarState();
+            GameController.Instance.changeState.Invoke(barState);
+        }
+       
+    }
+    public void gymEntry()
+    {
+        if (GameController.Instance.player.Money >= 10)
+        {
+            PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.DecreaseMoney, 10);
+            GameController.Instance.player.StatsChangeEvent.Invoke(args);
+            State gymState = new GymState();
+            GameController.Instance.changeState.Invoke(gymState);
+        }
+        
     }
 
 }
