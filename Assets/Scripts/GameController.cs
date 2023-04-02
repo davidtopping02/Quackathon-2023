@@ -1,5 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Unity.Services.Authentication;
+using Unity.Services.CloudSave;
+using Unity.Services.Core;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 public class GameController : MonoBehaviour
 {
@@ -58,6 +65,38 @@ public class GameController : MonoBehaviour
         currentState = new MainMenuState();
 
         currentState.OnEnter();
+        InitalizeUnityServicesAsync();
+    }
+
+    private async Task InitalizeUnityServicesAsync()
+    {
+        await UnityServices.InitializeAsync();
+        Debug.Log(UnityServices.State); 
+        // dirty Sign in 
+        await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        await LoadDataAsync(); 
+   
+
+    }
+     async Task LoadDataAsync()
+    {
+        await CloudSaveService.Instance.Data.LoadAsync();
+        // Access the saved data using CloudSaveService.Instance.Data
+        var savedData = await CloudSaveService.Instance.Data.LoadAsync(new HashSet<string> { "PlayerData" });
+        var strData = savedData["PlayerData"]; 
+        var des = JsonConvert.DeserializeObject<PlayerStats>(strData);
+        des = JsonUtility.FromJson<PlayerStats>(strData);
+        if(des != null)
+        {
+            if(des.HasDied)
+            {
+                player = new PlayerStats(); // basically reset stats. 
+            }
+            else
+            {
+                player = des; 
+            }
+        }
     }
 
     private void HandeStateChange(State stateChange)

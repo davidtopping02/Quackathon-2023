@@ -1,6 +1,10 @@
 using TMPro;
+using Unity.Services.CloudSave;
+using System;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using System.Collections.Generic;
 
 public class EndOfDayStats : MonoBehaviour
 {
@@ -18,6 +22,7 @@ public class EndOfDayStats : MonoBehaviour
         //Increase the days survived
         PlayerStatsEventArgs args = new PlayerStatsEventArgs(PlayerStatsEventArgs.cmd.IncreaseDays,1);
         GameController.Instance.player.StatsChangeEvent.Invoke(args);
+        CloudSaceAsync();
     }
 
 
@@ -25,5 +30,12 @@ public class EndOfDayStats : MonoBehaviour
     {
         State state = new HomeState();
         GameController.Instance.changeState.Invoke(state);
+       
+    }
+
+    private async Task CloudSaceAsync()
+    {
+        var data = new Dictionary<string, object> { { "PlayerData", GameController.Instance.player } };
+        await CloudSaveService.Instance.Data.ForceSaveAsync(data);
     }
 }
