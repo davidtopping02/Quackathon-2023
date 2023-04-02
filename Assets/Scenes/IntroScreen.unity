@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce431ae864d08742af0fbdeebdd44a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pannel: {fileID: 0}
+  Pannel: {fileID: 13789316}
   low: {r: 0.7264151, g: 0.6638204, b: 0.4968405, a: 0.49803922}
   high: {r: 0.7830189, g: 0.5524944, b: 0.114498034, a: 0.34117648}
   lerpSpeed: 1
@@ -1151,6 +1151,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220080049}
   m_CullTransparentMesh: 1
+--- !u!1001 &1260297469
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3500254219083734996, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
+      propertyPath: m_Name
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500254219083734998, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500254219083734998, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.33975485
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500254219083734998, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.014031175
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500254219083734998, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.004500015
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500254219083734998, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500254219083734998, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500254219083734998, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500254219083734998, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500254219083734998, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500254219083734998, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500254219083734998, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ced7be22f071bff4aa1962f2db7acfc9, type: 3}
 --- !u!1 &1504588715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,7 +1582,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1976794342}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 13789315}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1976794342
 MonoBehaviour:
   m_ObjectHideFlags: 0

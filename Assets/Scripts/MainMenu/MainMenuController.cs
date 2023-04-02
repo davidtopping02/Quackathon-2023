@@ -12,6 +12,12 @@ public class MainMenuController : MonoBehaviour
     public Color high;
     public float lerpSpeed = 5.0f;
 
+    public void PlayGame()
+    {
+        State ns = new HomeState();
+        GameController.Instance.changeState.Invoke(ns); 
+    }
+
     private void Update()
     {
        Pannel.color = Color.Lerp(low, high, Time.deltaTime * lerpSpeed);

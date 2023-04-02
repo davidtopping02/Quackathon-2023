@@ -49,4 +49,9 @@ public class TimeManger : MonoBehaviour
         string formattedTime = string.Format("{0:00}:{1:00}", hours, minutes);
         m_TextMeshPro.text = "Time Left: " + formattedTime;
     }
+
+    public void resetTimer()
+    {
+        timeLeft = m_UpHours;
+    }
 }
