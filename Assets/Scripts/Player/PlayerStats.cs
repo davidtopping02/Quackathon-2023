@@ -79,7 +79,7 @@ public class PlayerStats
     }
 
     public bool HasCar { get; private set; }
-    public bool HasDoes { get; private set; }
+    public bool HasDied { get; private set; }
     public uint DaysSurvived { get; private set; }
 
     public customIntEvent updateUI = new customIntEvent();
@@ -95,7 +95,7 @@ public class PlayerStats
         Strength = 20;
         Social = 20;
         HasCar = false;
-        HasDoes = false;
+        HasDied = false;
         
     }
 

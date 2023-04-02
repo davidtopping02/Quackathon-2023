@@ -88,7 +88,7 @@ public class GameController : MonoBehaviour
         des = JsonUtility.FromJson<PlayerStats>(strData);
         if(des != null)
         {
-            if(des.HasDoes)
+            if(des.HasDied)
             {
                 player = new PlayerStats(); // basically reset stats. 
             }
