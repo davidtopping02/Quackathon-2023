@@ -19,7 +19,7 @@ public class PlayerStats
         } 
     }// die on zero
 
-    private int money = 50;
+    private int money = 5;
     public int Money { get { return money; } private set {
             if (money <= 0)
             {
@@ -28,7 +28,7 @@ public class PlayerStats
         } 
     }// die on zero
 
-    private int strength = 20;
+    private int strength = 50;
     public int Strength { get { return strength; } private set {
             strength = Math.Clamp(strength, 0, 100);
             if (strength <= 0)
